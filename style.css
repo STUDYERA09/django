@@ -1,0 +1,192 @@
+/* Unique Design Concept: Space/Universe-themed, Dark Mode with Bright Accents */
+
+:root {
+    --primary-color: #4CAF50; /* A bright, vibrant green for study/growth */
+    --secondary-color: #2196F3; /* A bright blue for tech/network */
+    --background-color: #0d1117; /* Dark space-like background */
+    --text-color: #e6edf3; /* Light text */
+    --font-stack: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ------------------- Pre-loader Styling ------------------- */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out; /* Smooth fade out */
+}
+
+.typing-container {
+    font-size: 3vw; /* Responsive font size */
+    color: var(--primary-color);
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#typing-text {
+    /* Text will be added by JavaScript */
+    /* Use a fixed width font for better typing effect appearance */
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.cursor {
+    display: inline-block;
+    animation: blink-caret 0.75s step-end infinite;
+    font-size: 1.2em; /* Slightly larger than text */
+    color: var(--secondary-color);
+}
+
+/* Typing/Blinking animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { color: var(--secondary-color); }
+}
+
+/* Class to hide the main content initially */
+.hidden {
+    display: none;
+}
+
+/* ------------------- Main Content Styling (Unique Design) ------------------- */
+
+#main-content {
+    /* Use a subtle background pattern for a 'universe' feel */
+    background: radial-gradient(circle at top left, rgba(20, 30, 40, 0.8), transparent 70%), 
+                radial-gradient(circle at bottom right, rgba(10, 20, 30, 0.6), transparent 80%),
+                var(--background-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(13, 17, 23, 0.8); /* Slightly transparent header */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color); /* Neon/Glow effect */
+}
+
+.header nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.header nav a:hover {
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    /* Unique feature: Perspective/3D Tilt effect on hero section */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.hero-text {
+    max-width: 800px;
+    transform: rotateX(5deg) rotateY(-5deg) translateZ(50px);
+    transition: transform 0.5s ease-out;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for contrast */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 50px rgba(76, 175, 80, 0.2);
+}
+
+.hero-text:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0px); /* Straighten on hover */
+}
+
+.hero h2 {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #66BB6A; /* Lighter green */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8em;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .header nav {
+        margin-top: 10px;
+    }
+    .header nav a {
+        margin-left: 10px;
+    }
+    .hero-text {
+        transform: none; /* Disable 3D tilt on mobile */
+        padding: 20px;
+    }
+    .hero h2 {
+        font-size: 2em;
+    }
+    .typing-container {
+        font-size: 6vw;
+    }
+  }
